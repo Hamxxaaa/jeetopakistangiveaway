@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jeeto Pakistan Giveaway - Mega Lucky Draw</title>
+  <meta name="description" content="Jeeto Pakistan Giveaway - Mega Lucky Draw. Share with 5 friends to unlock entry. Free monthly prizes.">
+  <!-- Paste OnClick/PopUnder ad scripts here (PropellerAds / Adsterra) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-ad" id="top-ad">TOP AD - paste banner code here</div>
+  <header class="vip-header">
+    <div class="container header-inner">
+      <div class="logo">Jeeto <span class="brand">Pakistan</span></div>
+      <div class="tagline">Mega Lucky Draw — Win Phones, Cars & More</div>
+    </div>
+  </header>
+
+  <div class="site">
+    <aside class="ad-col left" id="ad-left">LEFT AD</aside>
+
+    <main class="main-area container">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="kicker">FREE - NO PAYMENT</div>
+          <h1 class="headline">Join the <span class="gold">Mega Lucky Draw</span></h1>
+          <p class="lead">Share to <strong>5 friends</strong> on WhatsApp and unlock your free entry.</p>
+
+          <div class="prize-wrap">
+            <img src="assets/prize-placeholder.png" alt="Prize 3D" id="prizeImg" class="prize-img">
+          </div>
+
+          <div class="ads-inline">
+            <div class="ad ad-inline" id="ad-inline-top">AD SLOT (inline)</div>
+          </div>
+
+          <div class="share-area">
+            <button id="shareBtn" class="btn btn-share">Share to 5 friends</button>
+
+            <div class="progress-wrap" aria-hidden="true">
+              <svg class="progress-ring" width="140" height="140">
+                <circle class="ring-bg" cx="70" cy="70" r="58"></circle>
+                <circle id="progressCircle" class="ring-progress" cx="70" cy="70" r="58"></circle>
+                <text id="progressText" x="50%" y="54%" text-anchor="middle" class="progress-text">0/5</text>
+              </svg>
+            </div>
+
+            <div class="enter-wrap">
+              <button id="enterBtn" class="btn btn-enter" disabled>Locked — Share 5 friends</button>
+            </div>
+          </div>
+
+          <div class="ads-inline bottom">
+            <div class="ad ad-inline" id="ad-inline-bottom">AD SLOT (inline bottom)</div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="winner card">
+        <h3>Last Month's Winner</h3>
+        <div id="winner-content">
+          <p><strong>Name:</strong> Ali Khan</p>
+          <p><strong>City:</strong> Lahore</p>
+          <p><strong>Prize:</strong> iPhone 17 Pro</p>
+          <p><strong>Month:</strong> September 2025</p>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="ad-col right" id="ad-right">RIGHT AD</aside>
+  </div>
+
+  <div class="sticky-bottom" id="sticky-ad">STICKY BOTTOM AD</div>
+
+  <footer class="site-footer container">
+    <div>© <span id="year"></span> Jeeto Pakistan Giveaway — All Rights Reserved</div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
+</body>
+</html>
