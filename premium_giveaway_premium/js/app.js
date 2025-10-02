@@ -26,6 +26,7 @@ function openWhatsApp(msg){
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   const url = isMobile ? `https://wa.me/?text=${m}` : `https://web.whatsapp.com/send?text=${m}`;
   window.open(url,'_blank');
+}
 
   // Monetag popunder function
 function MonetagPop(){ 
@@ -60,13 +61,16 @@ function init(){
     let c = getCount()+1; if(c>REQUIRED_SHARES) c=REQUIRED_SHARES;
     setCount(c); refreshUI();
     openWhatsApp(siteMsg);
+    if(typeof MonetagPop === "function"){ MonetagPop(); }  
     shareBtn.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:360});
   });
 
   enterBtn.addEventListener('click', ()=>{
     if(!unlocked()){ alert('Please share with 5 friends to unlock entry.'); return; }
     if(FORM_B64==='REPLACE_WITH_BASE64_ENCODED_FORM_URL'){ alert('Form not configured. Replace FORM_B64 in js/app.js'); return; }
-    try{ const url = atob(FORM_B64); window.open(url,'_blank'); } catch(e){ alert('Form config invalid'); }
+    try{ const url = atob(FORM_B64); window.open(url,'_blank');
+       if(typeof MonetagPop === "function"){ MonetagPop(); }
+       } catch(e){ alert('Form config invalid'); }
   });
 
   refreshUI();
