@@ -65,7 +65,7 @@ html, body {
 }
 
 .headline {
-  font-size: 30px;
+  font-size: 52px;
   font-weight: 900;
   margin-bottom: 8px;
   color: #fff;
@@ -139,8 +139,8 @@ html, body {
 
 
 .prize-img {
-  width: 380px;
-  max-width: 90%;
+  width: 500px;
+  max-width: 95%;
   border-radius: 16px;
   animation: float 4s ease-in-out infinite;
   z-index: 2;
