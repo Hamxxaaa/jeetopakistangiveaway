@@ -1,62 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeeto Inaam – Pakistan Mega Lucky Draw</title>
- <meta name="monetag" content="4fcfd7f470c862c80f6da6b270e7431c">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jeeto Inaam — Pakistan Mega Lucky Draw</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <meta name="monetag" content="4fcfd7f470c862c80f6da6b270e7431c">
+  <!-- main stylesheet (replace with your existing path if different) -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="description" content="Join Jeeto Inaam — Pakistan Mega Lucky Draw. Share with friends to unlock entry.">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="vip-header">
-    <h1 class="main-title">
-      <span class="brand">Jeeto Inaam</span><br />
-      <span class="subtitle">Pakistan Mega Lucky Draw</span>
-    </h1>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <div class="kicker">🎁 Free Monthly Giveaway Event</div>
-      <h2 class="headline">Win Exciting Prizes Every Month!</h2>
-      <p class="lead">
-        Participate in Pakistan’s biggest online lucky draw. It’s 100% free — just share with 5 friends and enter to win!
-      </p>
-
-      <div class="prize-wrap">
-        <div class="prize-glow"></div>
-        <img src="assets/prize.png" alt="Giveaway Prize" class="prize-img" />
-      </div>
-
-      <div class="share-section">
-        <button id="shareBtn" class="btn btn-share">🔗 Share to 5 Friends</button>
-
-        <svg class="progress-ring" width="120" height="120">
-          <circle class="ring-bg" cx="60" cy="60" r="55"></circle>
-          <circle id="progressCircle" class="ring-progress" cx="60" cy="60" r="55"></circle>
-          <text id="progressText" class="progress-text" x="50%" y="54%" text-anchor="middle">0/5</text>
-        </svg>
-
-        <button id="enterBtn" class="btn btn-enter locked" disabled>
-          🔒 Locked — Share 5 Friends
-        </button>
-      </div>
-
-      <div class="winner">
-        <h3>🏆 Last Month’s Winner</h3>
-        <div id="winner-content">
-          <p>Loading winner details...</p>
+  <div class="page-wrap">
+    <main class="container">
+      <!-- Compact header (centered) -->
+      <header class="vip-header" aria-label="site header">
+        <div class="header-inner center">
+          <div class="logo" aria-hidden="true">
+            <span style="font-size:30px">Jeeto <span class="brand">Inaam</span></span>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </header>
 
-  <footer class="site-footer">
-    <p>© 2025 Jeeto Inaam Pakistan — All Rights Reserved</p>
-  </footer>
+      <!-- Hero / short landing content -->
+      <section class="hero" role="main" aria-labelledby="hero-title">
+        <div class="kicker">FREE ENTRY — MONTHLY PRIZES</div>
+        <h1 id="hero-title" class="headline">
+          <span class="gold">Jeeto Inaam</span><br>
+          <small style="display:block;font-size:18px;margin-top:6px;color:var(--muted)">Pakistan Mega Lucky Draw</small>
+        </h1>
 
-  <script async src="https://your-monetag-popunder-script.js"></script>
+        <!-- prize visual with shimmering gold rays behind it -->
+        <div class="prize-wrap" aria-hidden="false">
+          <!-- keep your existing image file path (I left the same path used previously) -->
+          <img id="prizeImg" class="prize-img" src="assets/prize.png" alt="Prize" />
+          <div class="shimmer-rays" aria-hidden="true"></div>
+        </div>
+
+        <!-- share / progress / enter grouped compactly -->
+        <div class="share-area" role="region" aria-label="Share and progress">
+          <!-- SVG progress ring (app.js expects #progressCircle & #progressText) -->
+          <div class="progress-ring" aria-hidden="false">
+            <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Sharing progress">
+              <circle class="ring-bg" cx="60" cy="60" r="54"></circle>
+              <circle id="progressCircle" class="ring-progress" cx="60" cy="60" r="54"></circle>
+              <text id="progressText" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="progress-text">0/5</text>
+            </svg>
+          </div>
+
+          <!-- Buttons: keep IDs as app.js expects -->
+          <div style="display:flex;flex-direction:column;gap:12px;align-items:center;">
+            <button id="shareBtn" class="btn btn-share" type="button">Share to 5 friends</button>
+            <button id="enterBtn" class="btn btn-enter locked" type="button" disabled>Locked — Share 5 friends</button>
+          </div>
+        </div>
+
+        <!-- last winner (app.js fills #winner-content via fetch) -->
+        <div class="winner" id="winner" aria-label="Last winner">
+          <h3>Last Month's Winner</h3>
+          <div id="winner-content">
+            <!-- populated dynamically by js (fetch /data/last_winner.json) -->
+            <p style="color:var(--muted)">No winner info available yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- tiny footer -->
+      <footer class="site-footer">
+        <div>© <span id="year"></span> Jeeto Inaam — Pakistan Mega Lucky Draw</div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- keep your app.js (do not alter) -->
   <script src="js/app.js"></script>
+
+  <!--
+    PASTE MONETAG POPUNDER SNIPPET HERE (right before </body>).
+    Example: your obfuscated Monetag inline script and the <script src="//x7i0.com/tag.min.js"...> you used previously.
+    app.js already calls MonetagPop(), so when Monetag script is present it will work.
+  -->
+
+  <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
 </body>
 </html>
