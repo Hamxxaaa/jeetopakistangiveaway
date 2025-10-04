@@ -1,90 +1,82 @@
 :root {
-  --gold1: #fff9d8;
-  --gold2: #ffda57;
-  --gold3: #ffb800;
-  --dark: #140900;
+  --bg1: #2b1900;
+  --bg2: #000000;
+  --gold1: #ffdd55;
+  --gold2: #ffb600;
+  --light: #fff7d1;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  color: #2b1500;
-  background: radial-gradient(circle at center, var(--gold1), var(--gold2), var(--gold3));
+  font-family: "Poppins", sans-serif;
+  color: #fffbe6;
+  background: radial-gradient(circle at center, var(--bg1), var(--bg2));
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   min-height: 100vh;
   text-align: center;
 }
 
 /* HEADER */
 .vip-header {
-  padding: 24px 0 10px;
-  background: transparent;
+  padding: 30px 0 10px;
   text-align: center;
 }
 
 .main-title {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 900;
-  color: var(--dark);
-  text-transform: uppercase;
-  text-shadow: 0 4px 16px rgba(255, 200, 0, 0.6);
   line-height: 1.2;
-}
-
-.brand {
-  background: linear-gradient(90deg, #ffda64, #ffae00);
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--gold1), var(--gold2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 18px rgba(255, 180, 0, 0.4);
 }
 
 .subtitle {
   font-size: 22px;
-  color: #4a3000;
-  letter-spacing: 1px;
+  color: var(--light);
+  text-shadow: 0 2px 10px rgba(255, 255, 200, 0.2);
 }
 
 /* CONTAINER */
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 20px;
 }
 
-/* HERO SECTION */
 .hero {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 8px 30px rgba(255, 180, 0, 0.25);
+  box-shadow: 0 6px 30px rgba(255, 200, 0, 0.15);
 }
 
 .kicker {
-  font-weight: 800;
-  color: #9a6700;
-  background: rgba(255, 255, 255, 0.4);
-  padding: 6px 14px;
+  background: rgba(255, 230, 120, 0.15);
+  color: var(--gold1);
+  font-weight: 700;
+  padding: 8px 16px;
   border-radius: 999px;
   display: inline-block;
   margin-bottom: 12px;
 }
 
 .headline {
-  font-size: 32px;
-  font-weight: 900;
+  font-size: 30px;
+  color: var(--light);
   margin-bottom: 8px;
-  color: #1d0a00;
+  text-shadow: 0 3px 12px rgba(255, 200, 100, 0.4);
 }
 
 .lead {
-  color: #4b3000;
-  font-size: 17px;
+  color: #ffedb5;
   margin-bottom: 22px;
 }
 
@@ -99,24 +91,24 @@ body {
 
 .prize-glow {
   position: absolute;
-  width: 260px;
-  height: 260px;
-  background: radial-gradient(circle, rgba(255, 225, 100, 0.9), rgba(255, 150, 0, 0.3), transparent 80%);
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.9), rgba(255, 150, 0, 0.3), transparent 70%);
   border-radius: 50%;
-  filter: blur(30px);
-  animation: shimmer 3s linear infinite;
+  filter: blur(40px);
+  animation: glowPulse 3s ease-in-out infinite;
   z-index: 0;
 }
 
-@keyframes shimmer {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
 }
 
 .prize-img {
   width: 400px;
   max-width: 90%;
-  border-radius: 14px;
+  border-radius: 16px;
   animation: float 4s ease-in-out infinite;
   position: relative;
   z-index: 2;
@@ -124,45 +116,45 @@ body {
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-14px); }
 }
 
-/* SHARE SECTION */
+/* BUTTONS & PROGRESS */
 .share-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   flex-wrap: wrap;
-  margin-top: 22px;
+  margin-top: 24px;
 }
 
 .btn {
   padding: 14px 26px;
-  border: none;
   border-radius: 999px;
+  border: none;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: 0.2s;
 }
 
-.btn:hover { transform: scale(1.06); }
+.btn:hover { transform: scale(1.05); }
 
 .btn-share {
-  background: linear-gradient(90deg, #ffb800, #ff8400);
+  background: linear-gradient(90deg, #ffb700, #ff7e00);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(255, 150, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(255, 150, 0, 0.4);
 }
 
 .btn-enter {
-  background: linear-gradient(90deg, #fff08a, #ffd24d);
+  background: linear-gradient(90deg, #fff6a5, #ffd54f);
   color: #2b1500;
-  box-shadow: 0 4px 14px rgba(255, 180, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(255, 200, 0, 0.3);
 }
 
 .btn-enter[disabled] {
-  opacity: 0.65;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
@@ -174,20 +166,20 @@ body {
 
 .ring-bg {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.3);
+  stroke: rgba(255, 255, 255, 0.2);
   stroke-width: 12;
 }
 
 .ring-progress {
   fill: none;
-  stroke: #ff9f00;
+  stroke: var(--gold1);
   stroke-width: 12;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.3s ease;
 }
 
 .progress-text {
-  fill: #4a3000;
+  fill: #fff;
   font-weight: 800;
   font-size: 18px;
 }
@@ -197,18 +189,18 @@ body {
   margin-top: 32px;
   padding: 18px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 200, 0, 0.3);
-  box-shadow: 0 4px 18px rgba(255, 200, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 210, 0, 0.3);
+  box-shadow: 0 4px 18px rgba(255, 200, 0, 0.15);
 }
 
 .winner h3 {
-  color: #b37400;
+  color: var(--gold1);
   margin-bottom: 8px;
 }
 
 .winner p {
-  color: #4b3000;
+  color: #fff6d9;
   font-size: 15px;
 }
 
@@ -217,14 +209,13 @@ body {
   margin-top: 28px;
   padding: 16px;
   font-size: 14px;
-  color: #4b3000;
+  color: #ffedb5;
   background: transparent;
 }
 
-/* RESPONSIVE */
 @media (max-width: 640px) {
-  .headline { font-size: 26px; }
   .main-title { font-size: 34px; }
+  .headline { font-size: 24px; }
   .subtitle { font-size: 18px; }
   .prize-img { width: 280px; }
   .prize-glow { width: 200px; height: 200px; }
