@@ -99,6 +99,40 @@ body {
   50% { opacity: 1; transform: scale(1.15); }
 }
 
+.prize-wrap::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255,220,90,0.8) 0deg,
+    rgba(255,170,0,0.0) 30deg,
+    rgba(255,220,90,0.8) 60deg,
+    rgba(255,170,0,0.0) 90deg,
+    rgba(255,220,90,0.8) 120deg,
+    rgba(255,170,0,0.0) 150deg,
+    rgba(255,220,90,0.8) 180deg,
+    rgba(255,170,0,0.0) 210deg,
+    rgba(255,220,90,0.8) 240deg,
+    rgba(255,170,0,0.0) 270deg,
+    rgba(255,220,90,0.8) 300deg,
+    rgba(255,170,0,0.0) 330deg,
+    rgba(255,220,90,0.8) 360deg
+  );
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: rotateRays 8s linear infinite;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+@keyframes rotateRays {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 .prize-img {
   width: 380px;
   max-width: 90%;
