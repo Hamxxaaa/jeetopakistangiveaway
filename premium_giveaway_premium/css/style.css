@@ -22,12 +22,17 @@ body {
   text-align: center;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* HEADER */
 .vip-header {
   padding: 28px 0 10px;
 }
 .main-title, .logo {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 900;
   background: linear-gradient(90deg, var(--gold1), var(--gold2));
   -webkit-background-clip: text;
@@ -39,7 +44,7 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 12px;
 }
 
 .hero {
