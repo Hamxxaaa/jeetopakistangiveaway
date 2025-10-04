@@ -29,15 +29,15 @@ html, body {
 
 /* HEADER */
 .vip-header {
-  padding: 28px 0 10px;
+  padding: 0px 0 5px;
 }
 .main-title, .logo {
-  font-size: 45px;
+  font-size: 55px;
   font-weight: 900;
   background: linear-gradient(90deg, var(--gold1), var(--gold2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 16px rgba(255, 200, 0, 0.3);
+  text-shadow: 0 4px 16px rgba(290, 250, 0, 0.5);
 }
 
 /* HERO */
@@ -65,7 +65,7 @@ html, body {
 }
 
 .headline {
-  font-size: 52px;
+  font-size: 30px;
   font-weight: 900;
   margin-bottom: 8px;
   color: #fff;
